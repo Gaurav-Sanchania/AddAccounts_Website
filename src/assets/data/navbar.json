@@ -1,0 +1,31 @@
+[
+    {
+        "optionId": 0,
+        "title": "Home",
+        "url": "/home",
+        "nodeSettings": []
+    },
+    {
+        "optionId": 1,
+        "title": "Courses",
+        "url": "/courses",
+        "nodeSettings": [ 
+            {
+                "optionId": 0,
+                "title": "Basic Accounting",
+                "url": "/courses/basic-accounting"
+            }, 
+            {
+                "optionId": 1,
+                "title": "Advance Accounting",
+                "url": "/courses/advance-accounting"
+            }
+        ]
+    },
+    {
+        "optionId": 2,
+        "title": "About Us",
+        "url": "/about-us",
+        "nodeSettings": []
+    }
+]
