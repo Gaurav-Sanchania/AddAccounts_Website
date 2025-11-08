@@ -1,71 +1,8 @@
-/* ==== NAVBAR ==== */
-nav {
-    background-color: #FCFAF9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 12px rgba(30, 50, 49, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background-color 0.3s ease;
-}
+/* =========================================================
+   NAVBAR ENHANCED CSS (Bootstrap + Angular Compatible)
+   ========================================================= */
 
-/* ==== LOGO ==== */
-.logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #5E3023;
-    text-decoration: none;
-    letter-spacing: 1px;
-    white-space: nowrap;
-}
-
-/* ==== NAV LINKS ==== */
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-/* ==== TOP-LEVEL NAV LINKS ==== */
-.nav-links>li>a {
-    text-decoration: none;
-    color: #1E3231;
-    font-weight: 500;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.3s ease;
-}
-
-.nav-links>li>a span {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    transform-origin: center center;
-    backface-visibility: hidden;
-}
-
-/* Hover for top-level links */
-.nav-links>li>a:hover {
-    color: #CC922F;
-}
-
-.nav-links>li>a:hover span {
-    transform: translateY(2px) scale(1.05);
-    opacity: 0.95;
-}
-
+/* ==== NAV LINK HOVER UNDERLINE ==== */
 .nav-links>li>a::after {
     content: "";
     position: absolute;
@@ -74,7 +11,6 @@ nav {
     width: 100%;
     height: 2px;
     background-color: #CC922F;
-    border-radius: 2px;
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
@@ -84,31 +20,27 @@ nav {
     transform: scaleX(1);
 }
 
-/* ==== KEEP LINK ACTIVE WHEN DROPDOWN IS VISIBLE ==== */
-.nav-links li:hover>a {
-    color: #CC922F;
+.nav-links>li>a:hover {
+    color: #CC922F !important;
 }
 
-.nav-links li:hover>a span {
+.nav-links>li>a:hover span {
     transform: translateY(2px) scale(1.05);
-    opacity: 0.95;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-links li:hover>a::after {
-    transform: scaleX(1);
-}
-
-/* ==== DROPDOWN (IMPROVED) ==== */
+/* =========================================================
+   DROPDOWN MENU
+   ========================================================= */
 .dropdown {
     list-style: none;
     position: absolute;
-    top: calc(100% + 1rem);
-    /* visually 1rem lower */
+    top: calc(100% + 0.6rem);
     left: 0;
     background-color: #FCFAF9;
     box-shadow: 0 4px 10px rgba(30, 50, 49, 0.1);
     border-radius: 6px;
-    padding: 0.5rem 0;
+    padding: 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -117,30 +49,27 @@ nav {
     z-index: 50;
 }
 
-/* Hover bridge to prevent flicker */
-.nav-links li::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 1rem;
-    /* same as dropdown gap */
+/* When Angular adds .show */
+.dropdown.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
-/* Show dropdown on hover */
-.nav-links li:hover>.dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+/* Hover (Desktop) */
+@media (min-width: 769px) {
+    .nav-links li:hover>.dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 
-/* Dropdown link styles */
+/* Dropdown link hover effect */
 .dropdown li a {
     display: block;
-    width: 100%;
-    text-decoration: none;
     padding: 0.6rem 1rem;
+    text-decoration: none;
     color: #1E3231;
     font-weight: 500;
     transition: background 0.2s ease, color 0.2s ease;
@@ -148,69 +77,168 @@ nav {
 
 .dropdown li a:hover {
     background-color: rgba(204, 146, 47, 0.1);
-    color: #CC922F;
+    color: #CC922F !important;
 }
 
-/* ==== BUTTON ==== */
-.nav-btn {
-    background-color: #CC922F;
-    color: #FCFAF9;
-    border: none;
-    padding: 0.6rem 1.3rem;
-    border-radius: 25px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(204, 146, 47, 0.3);
-    white-space: nowrap;
-}
-
+/* =========================================================
+   NAV BUTTON HOVER
+   ========================================================= */
 .nav-btn:hover {
-    background-color: #C08552;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(192, 133, 82, 0.35);
+    box-shadow: 0 8px 18px rgba(204, 146, 47, 0.45) !important;
 }
 
-/* ==== RESPONSIVE ==== */
+/* =========================================================
+   MOBILE MENU TOGGLE (Animated version)
+   ========================================================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 2px;
+    width: 20px;
+    background-color: #212529;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        opacity 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* ===== Active state (Menu Open) ===== */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    animation: morphDown 0.35s ease;
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    animation: morphUp 0.35s ease;
+}
+
+/* ===== Keyframes for bounce-like morph ===== */
+@keyframes morphDown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(5px) rotate(25deg);
+    }
+
+    100% {
+        transform: translateY(7px) rotate(45deg);
+    }
+}
+
+@keyframes morphUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-25deg);
+    }
+
+    100% {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE (MOBILE)
+   ========================================================= */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem !important;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
     }
 
     .nav-links {
-        flex-direction: column;
+        flex-direction: column !important;
         width: 100%;
         margin-top: 1rem;
-        gap: 1rem;
+        gap: 1rem !important;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links>li,
+    .nav-links>li>a {
+        width: 100%;
+    }
+
+    .nav-links.active {
+        max-height: 600px;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links>li>a::after {
         display: none;
     }
 
-    .dropdown {
-        position: static;
-        box-shadow: none;
-        background: transparent;
-        padding: 0;
-        transform: none;
-        visibility: visible;
-        opacity: 1;
+    .has-dropdown i {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
     }
 
-    .nav-links li::after {
-        display: none;
-        /* disable hover bridge on mobile */
+    /* =========================================================
+     Mobile dropdown (smooth transition version)
+     ========================================================= */
+    .has-dropdown {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .has-dropdown .dropdown {
+        position: static;
+        box-shadow: none !important;
+        background: transparent !important;
+        padding-left: 1rem;
+        /* remove display toggle (we'll use animation) */
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-6px);
+        transition: all 0.3s ease;
+    }
+
+    .has-dropdown .dropdown.show {
+        max-height: 500px;
+        /* enough space for list items */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .dropdown li a {
-        padding-left: 1.5rem;
+        padding-left: 1.5rem !important;
     }
 
     .nav-btn {
-        align-self: center;
+        width: 100%;
         margin-top: 1rem;
     }
 }

@@ -1,21 +1,66 @@
 <!-- ==== NAVBAR START ==== -->
-<nav>
-  <a href="#" class="logo">AddAccounts</a>
-  <ul class="nav-links">
-    <li><a href="#"><span>Home</span></a></li>
-    <li><a href="#"><span>Tutor</span></a></li>
-    
-    <!-- Nav item with dropdown -->
-    <li>
-      <a href="#"><span>Courses</span></a>
-      <ul class="dropdown">
-        <li><a href="#"><span>Basic Accounting</span></a></li>
-        <li><a href="#"><span>Advance Accounting</span></a></li>
-      </ul>
+<nav class="d-flex justify-content-between align-items-center px-4 py-3 shadow-sm sticky-top w-100"
+  style="background-color:#FCFAF9;box-sizing:border-box;z-index:100;">
+  <a href="#" class="logo fs-4 fw-bold text-decoration-none text-nowrap" style="color:#5E3023;letter-spacing:1px;">
+    AddAccounts
+  </a>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle d-md-none border-0 bg-transparent p-0" (click)="toggleMenu()" [class.active]="isMenuOpen"
+    aria-label="Toggle menu" aria-expanded="{{isMenuOpen}}" aria-controls="main-navigation">
+    <span class="d-block bg-dark rounded-1"></span>
+    <span class="d-block bg-dark rounded-1 my-1"></span>
+    <span class="d-block bg-dark rounded-1"></span>
+  </button>
+
+  <ul id="main-navigation" class="nav-links list-unstyled d-flex align-items-center gap-5 m-0 p-0 transition-all"
+    [class.active]="isMenuOpen">
+    <li class="position-relative">
+      <a href="#"
+        class="text-decoration-none text-dark fw-medium d-inline-flex align-items-center position-relative justify-content-center">
+        <span>Home</span>
+      </a>
     </li>
 
-    <li><a href="#"><span>Testimonials</span></a></li>
+    <li class="position-relative">
+      <a href="#"
+        class="text-decoration-none text-dark fw-medium d-inline-flex align-items-center position-relative justify-content-center">
+        <span>Tutor</span>
+      </a>
+    </li>
+
+    <!-- Courses Dropdown -->
+    <li class="position-relative has-dropdown">
+      <a href="javascript:void(0)" (click)="toggleDropdown()" [attr.aria-expanded]="isDropdownOpen" aria-haspopup="true"
+        class="text-decoration-none text-dark fw-medium d-inline-flex align-items-center position-relative justify-content-center">
+        <span>Courses</span>
+        <i class="bi chevron d-md-none ms-2" [ngClass]="isDropdownOpen ? 'bi-chevron-up open' : 'bi-chevron-down'"
+          aria-hidden="true"></i>
+      </a>
+
+      <ul class="dropdown list-unstyled bg-light shadow rounded-2 mt-2 d-flex flex-column" [class.show]="isDropdownOpen"
+        style="min-width:180px; top:100%; left:0;">
+        <li>
+          <a href="#" class="d-block px-3 py-2 text-decoration-none text-dark fw-medium">Basic Accounting</a>
+        </li>
+        <li>
+          <a href="#" class="d-block px-3 py-2 text-decoration-none text-dark fw-medium">Advance Accounting</a>
+        </li>
+      </ul>
+
+    </li>
+
+    <li class="position-relative">
+      <a href="#"
+        class="text-decoration-none text-dark fw-medium d-inline-flex align-items-center position-relative justify-content-center">
+        <span>Testimonials</span>
+      </a>
+    </li>
   </ul>
-  <button class="nav-btn">Connect with us</button>
+
+  <button class="nav-btn btn fw-semibold text-nowrap ms-3"
+    style="background-color:#CC922F;color:#FCFAF9;border-radius:25px;box-shadow:0 4px 10px rgba(204,146,47,0.3);padding:0.6rem 1.3rem;">
+    Connect with us
+  </button>
 </nav>
 <!-- ==== NAVBAR END ==== -->
