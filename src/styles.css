@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* NOTE: The root variables are not used in Navbar. */
+:root {
+    --bg-main: #FCFAF9;
+    --bg-alt: #F3E9DC;
+    --text-main: #1E3231;
+    --text-secondary: #5E3023;
+    --accent: #C08552;
+    --hover-accent: #CC922F;
+    --border: #C6C0B9;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -8,7 +18,10 @@
 body {
     margin: 0px;
     padding: 0px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    background-color: var(--bg-main);
 }

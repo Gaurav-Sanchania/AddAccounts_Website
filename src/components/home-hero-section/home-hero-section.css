@@ -1,0 +1,72 @@
+/* Hero */
+.hero {
+    background-color: var(--bg-alt);
+    text-align: center;
+    padding: 8rem 2rem;
+    /* more vertical space for breathing */
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    color: var(--text-main);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    max-width: 800px;
+    /* keeps text in one clean block */
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 650px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.hero button {
+    background-color: var(--accent); /* same as #CC922F */
+    color: var(--bg-main); /* likely #FCFAF9 */
+    border: 2px solid var(--accent);
+    padding: 1rem 2.5rem;
+    border-radius: 10px; /* less round than navbar button */
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: none; /* no shadow, keeps it flatter */
+}
+
+.hero button:hover {
+    background-color: transparent;
+    color: var(--accent);
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(204, 146, 47, 0.15); /* subtle glow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+    }
+}
