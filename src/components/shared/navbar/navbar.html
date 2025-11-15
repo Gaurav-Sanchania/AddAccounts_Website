@@ -14,7 +14,7 @@
   </button>
 
   <ul id="main-navigation" class="nav-links list-unstyled d-flex align-items-center gap-5 m-0 p-0 transition-all"
-    [class.active]="isMenuOpen">
+    [class.active]="isMenuOpen" [ngClass]="isMenuOpen ? 'custom-responsive-margin' :  ''">
     <li class="position-relative">
       <a href="#"
         class="text-decoration-none text-dark fw-medium d-inline-flex align-items-center position-relative justify-content-center">

@@ -1,0 +1,31 @@
+/* Services */
+.services {
+    background-color: var(--bg-alt);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.services h2 {
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 280px;
+}
+
+.card h3 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}

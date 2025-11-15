@@ -163,6 +163,10 @@
         padding: 1rem 1.5rem !important;
     }
 
+    nav > .nav-btn {
+        display: none;
+    }
+
     .menu-toggle {
         display: flex;
         margin-left: auto;
@@ -171,7 +175,6 @@
     .nav-links {
         flex-direction: column !important;
         width: 100%;
-        margin-top: 1rem;
         gap: 1rem !important;
         max-height: 0;
         overflow: hidden;
@@ -241,4 +244,8 @@
         width: 100%;
         margin-top: 1rem;
     }
+}
+
+.custom-responsive-margin {
+    margin: 10px 0px !important;
 }

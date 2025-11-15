@@ -1,0 +1,38 @@
+ /* About */
+ .about {
+     padding: 4rem 2rem;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 3rem;
+ }
+
+ .about img {
+     width: 400px;
+     border-radius: 12px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+     /* subtle soft shadow */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .about img:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+ }
+
+ .about-text {
+     max-width: 500px;
+ }
+
+ .about-text h2 {
+     color: var(--text-main);
+ }
+
+ /* =========================================================
+   RESPONSIVE (MOBILE)
+   ========================================================= */
+ @media (max-width: 768px) {
+     .about img {
+         width: 280px;
+     }
+ }

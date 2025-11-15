@@ -1,0 +1,16 @@
+/* Testimonials */
+.testimonials {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}

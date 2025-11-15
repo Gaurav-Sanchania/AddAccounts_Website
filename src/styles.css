@@ -25,3 +25,30 @@ body {
     color: var(--text-secondary);
     background-color: var(--bg-main);
 }
+
+/* ===== Custom Scrollbar for Chrome/Edge/Safari ===== */
+::-webkit-scrollbar {
+  width: 10px;  /* vertical thickness */
+  height: 8px;  /* horizontal thickness */
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5; /* track color (light gray for visibility) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5E3023; /* accent color */
+  border-radius: 10px;
+  border: 2px solid #f5f5f5; /* gives padding around thumb to make it visible */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #5E3023 /* slightly darker on hover */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #5E3023 #f5f5f5;
+}
